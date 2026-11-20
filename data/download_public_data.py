@@ -45,9 +45,13 @@ STATIONS = [
     {"name": "yongan", "name_cn": "永安", "lat": 25.9700, "lon": 117.3600},
 ]
 
+# GloFAS 河流断面（已按主河道格点校准，避开小支流格点）
 FLOW_POINTS = [
-    {"name": "shuikou", "name_cn": "水口坝址", "lat": 26.2167, "lon": 118.7333},
-    {"name": "nanping", "name_cn": "南平断面", "lat": 26.6400, "lon": 118.1700},
+    {"name": "nanping", "name_cn": "南平（闽江干流）", "lat": 26.6400, "lon": 118.1700},
+    {"name": "jianou", "name_cn": "建瓯（建溪）", "lat": 26.9500, "lon": 118.2500},
+    {"name": "shaowu", "name_cn": "邵武（富屯溪）", "lat": 27.3400, "lon": 117.4900},
+    {"name": "sanming", "name_cn": "三明（沙溪）", "lat": 26.2600, "lon": 117.6400},
+    {"name": "shuikou_dam", "name_cn": "水口坝下", "lat": 26.2750, "lon": 118.7750},
 ]
 
 HOURLY_VARS = [
