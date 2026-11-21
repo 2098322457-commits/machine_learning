@@ -1,0 +1,6 @@
+/.gitignore text eol=lf
+/README.md text eol=lf
+/minjiang-v3/** text=auto eol=lf
+/minjiang-v4/** text=auto eol=lf
+/minjiang-v5/** text=auto eol=lf
+/minjiang-v6/** text=auto eol=lf
