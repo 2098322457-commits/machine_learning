@@ -2,6 +2,8 @@
 
 最终模型在 **2021 年验证集 RMSE 为 88.69 m³/s**，在 **2022–2023 年历史测试集 RMSE 为 91.45 m³/s**。组员初版在相同日期的 RMSE 为 118.94 m³/s，降幅 **23.11%**。[最终版说明](minjiang-v6/README.md) · [历次优化与对照表现](minjiang-v6/优化记录.md)
 
+**建议用方向校准版作为作业主结果，用对称区间版作对照。** 两版的点预测一致。方向校准把高流量日覆盖从 32/37 提到 36/37，历史测试的平均区间分数降低 12.60%。[两版优缺点与选择](minjiang-v6/优化记录.md)
+
 ## 数据与任务
 
 小组任务使用既有的八张气象、水文和站点 CSV，预测南平断面下一天的 GloFAS 模拟日均流量。2025 DCIC 原题考核逐小时入库流量，两者使用不同的标签与评估口径。本仓库的实验分数对应小组定义的日尺度任务。[原始表与时间边界](minjiang-v3/数据质量.md)
@@ -20,3 +22,12 @@ $py = '.\.venv\Scripts\python.exe'
 ```
 
 第一次运行会校验固定提交中的数据并生成模型、逐日预测、评估和区间。若用浅克隆，请先运行 `git fetch --unshallow`，让脚本可以读取数据来源提交。汇总成绩随代码保存，逐日输出在本地生成。
+
+上面的命令会复现对称区间版。在同一环境中运行以下命令，可复现方向校准版并独立核对两个版本。
+
+```powershell
+& $py .\minjiang-v6\interval_experiment.py
+& $py .\minjiang-v6\interval_experiment.py --historical-test
+& $py .\minjiang-v6\interval_pair_check.py
+& $py .\minjiang-v6\interval_experiment.py --next
+```
