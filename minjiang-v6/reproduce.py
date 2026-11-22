@@ -58,7 +58,10 @@ def main():
     run(V4 / "peak_audit.py")
     run(HERE / "uncertainty.py")
     run(HERE / "audit.py")
-    run(HERE / "uncertainty.py", "--next")
+    run(HERE / "interval_experiment.py")
+    run(HERE / "interval_experiment.py", "--historical-test")
+    run(HERE / "interval_pair_check.py")
+    run(HERE / "interval_experiment.py", "--next")
 
 
 if __name__ == "__main__":
